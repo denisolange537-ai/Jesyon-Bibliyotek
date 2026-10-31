@@ -1,0 +1,18 @@
+<UserControl x:Class="GestionBibliotheque.SettingsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <DockPanel Margin="0,0,0,18"><TextBlock FontSize="20" FontWeight="SemiBold" Text="Paramèt ak antretyen" /><StackPanel DockPanel.Dock="Right" Orientation="Horizontal"><Button Padding="12,7" Content="Backup" Click="BackupButton_Click" /><Button Margin="8,0,0,0" Padding="12,7" Content="Restore" Click="RestoreButton_Click" /></StackPanel></DockPanel>
+            <Grid Margin="0,0,0,20"><Grid.ColumnDefinitions><ColumnDefinition Width="180" /><ColumnDefinition Width="240" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions><Grid.RowDefinitions><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /><RowDefinition Height="Auto" /></Grid.RowDefinitions>
+                <TextBlock Margin="0,0,12,10" Text="Non bibliyotèk" /><TextBox Grid.Column="1" Margin="0,0,12,10" Padding="6" Text="{Binding ApplicationName, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Grid.Row="1" Margin="0,0,12,10" Text="Jou prete" /><TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,12,10" Padding="6" Text="{Binding LoanDays, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Grid.Row="2" Margin="0,0,12,10" Text="Amann pa jou" /><TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,12,10" Padding="6" Text="{Binding FinePerDay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Grid.Row="3" Margin="0,0,12,10" Text="Tèm" /><ComboBox Grid.Row="3" Grid.Column="1" Margin="0,0,12,10" SelectedValue="{Binding Theme}" SelectedValuePath="Tag"><ComboBoxItem Tag="Light" Content="Klè" /><ComboBoxItem Tag="Dark" Content="Fènwa" /></ComboBox>
+                <Button Grid.Column="2" Grid.RowSpan="4" Width="120" Height="34" HorizontalAlignment="Left" Content="Anrejistre" Command="{Binding SaveCommand}" />
+            </Grid>
+            <TextBlock Margin="0,0,0,12" Foreground="{DynamicResource MutedText}" Text="Jounal aktivite" />
+            <DataGrid ItemsSource="{Binding AuditEntries}" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Height="300"><DataGrid.Columns><DataGridTextColumn Header="Dat" Binding="{Binding CreatedAtUtc, StringFormat={}{0:dd/MM/yyyy HH:mm}}" /><DataGridTextColumn Header="Itilizatè" Binding="{Binding Username}" /><DataGridTextColumn Header="Aksyon" Binding="{Binding Action}" /><DataGridTextColumn Header="Objè" Binding="{Binding EntityName}" /><DataGridTextColumn Header="Detay" Binding="{Binding Details}" /></DataGrid.Columns></DataGrid>
+            <Button Margin="0,12,0,0" Width="120" HorizontalAlignment="Left" Padding="10,6" Content="Rafrechi jounal" Command="{Binding RefreshAuditCommand}" />
+            <TextBlock Margin="0,10,0,0" Foreground="{DynamicResource MutedText}" Text="{Binding Message}" />
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

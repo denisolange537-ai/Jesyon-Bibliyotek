@@ -1,0 +1,14 @@
+﻿<Application x:Class="GestionBibliotheque.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GestionBibliotheque"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <SolidColorBrush x:Key="ShellBackground" Color="#F4F1EA" />
+        <SolidColorBrush x:Key="SidebarBackground" Color="#1F3A3D" />
+        <SolidColorBrush x:Key="PanelBackground" Color="#FFFFFF" />
+        <SolidColorBrush x:Key="PrimaryText" Color="#173033" />
+        <SolidColorBrush x:Key="MutedText" Color="#657477" />
+        <SolidColorBrush x:Key="AccentBrush" Color="#D36B3D" />
+    </Application.Resources>
+</Application>

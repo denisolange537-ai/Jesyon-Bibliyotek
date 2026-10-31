@@ -1,0 +1,83 @@
+﻿<Window x:Class="GestionBibliotheque.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionBibliotheque"
+        mc:Ignorable="d"
+        Title="Gestion Bibliyotèk" Height="620" Width="1020"
+        WindowStartupLocation="CenterScreen"
+        KeyDown="MainWindow_KeyDown">
+    <Grid Background="{DynamicResource ShellBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="{DynamicResource SidebarBackground}">
+            <DockPanel Margin="22">
+                <TextBlock DockPanel.Dock="Top" Foreground="White" FontSize="24" FontWeight="SemiBold"
+                           Text="BIBLIYOTÈK" />
+                <TextBlock DockPanel.Dock="Top" Margin="0,4,0,34" Foreground="#B5C8C5"
+                           Text="Administrasyon" />
+                <StackPanel DockPanel.Dock="Top">
+                    <Button x:Name="HomeButton" Padding="14,10" HorizontalContentAlignment="Left"
+                            Background="{DynamicResource AccentBrush}" Foreground="White" BorderThickness="0"
+                            Content="Akèy" Click="HomeButton_Click" AutomationProperties.Name="Akèy" />
+                        <Button x:Name="BooksButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                            Content="Liv" Click="BooksButton_Click" AutomationProperties.Name="Liv" />
+                            <Button x:Name="MembersButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                Content="Manm" Click="MembersButton_Click" AutomationProperties.Name="Manm" />
+                                <Button x:Name="BorrowingButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                    Content="Prete" Click="BorrowingButton_Click" AutomationProperties.Name="Prete" />
+                                        <Button x:Name="ReturnsButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                    Content="Retou + Amann" Click="ReturnsButton_Click" AutomationProperties.Name="Retou ak amann" />
+                                        <Button x:Name="ReservationsButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                            Content="Rezèvasyon" Click="ReservationsButton_Click" AutomationProperties.Name="Rezèvasyon" />
+                                        <Button x:Name="EmployeesButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                            Content="Anplwaye" Click="EmployeesButton_Click" AutomationProperties.Name="Anplwaye" />
+                                        <Button x:Name="RolesButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                            Content="Wòl ak pèmisyon" Click="RolesButton_Click" AutomationProperties.Name="Wòl ak pèmisyon" />
+                                        <Button x:Name="CompanyButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                            Content="Company" Click="CompanyButton_Click" AutomationProperties.Name="Company" />
+                                        <Button x:Name="PayrollButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                            Content="Payroll" Click="PayrollButton_Click" AutomationProperties.Name="Payroll" />
+                                        <Button x:Name="ReportsButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                            Content="Rapò" Click="ReportsButton_Click" AutomationProperties.Name="Rapò" />
+                                        <Button x:Name="SettingsButton" Margin="0,8,0,0" Padding="14,10" HorizontalContentAlignment="Left"
+                                            Content="Paramèt" Click="SettingsButton_Click" AutomationProperties.Name="Paramèt" />
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <Grid Grid.Column="1" Margin="34">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button Padding="12,7" Content="Tèm: Klè" Click="ThemeButton_Click" AutomationProperties.Name="Chanje tèm" />
+                <Button Margin="10,0,0,0" Padding="12,7" Content="Modpas" Click="ChangePasswordButton_Click" AutomationProperties.Name="Chanje modpas" />
+                <Button Margin="10,0,0,0" Padding="12,7" Content="Dekonekte" Click="LogoutButton_Click" AutomationProperties.Name="Dekonekte" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock x:Name="PageTitleTextBlock" FontSize="30" FontWeight="SemiBold"
+                           Foreground="{DynamicResource PrimaryText}" Text="Akèy" />
+                <TextBlock x:Name="UserTextBlock" Margin="0,4,0,0" Foreground="{DynamicResource MutedText}" />
+            </StackPanel>
+        </DockPanel>
+        <ContentControl x:Name="ContentArea" Grid.Row="1" Margin="0,28,0,24">
+            <Border Padding="28" Background="{DynamicResource PanelBackground}"
+                    BorderBrush="#D9D3C8" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock FontSize="20" FontWeight="SemiBold" Foreground="{DynamicResource PrimaryText}"
+                               Text="Sesyon an ouvè" />
+                    <TextBlock Margin="0,8,0,0" Foreground="{DynamicResource MutedText}"
+                               Text="Ou konekte avèk siksè kòm manm ekip bibliyotèk la." TextWrapping="Wrap" />
+                </StackPanel>
+            </Border>
+        </ContentControl>
+        <TextBlock Grid.Row="2" Foreground="{DynamicResource MutedText}" Text="Gestion Bibliyotèk · 2026" />
+        </Grid>
+    </Grid>
+</Window>

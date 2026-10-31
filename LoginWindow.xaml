@@ -1,0 +1,33 @@
+<Window x:Class="GestionBibliotheque.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ouvri sesyon" Height="390" Width="460"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        KeyDown="LoginWindow_KeyDown">
+    <Grid Margin="32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="26" FontWeight="SemiBold" Text="Gestion Bibliyotèk" />
+        <TextBlock Grid.Row="1" Margin="0,8,0,20" Foreground="#5C6670" Text="Sekirize aksè bibliyotèk la" />
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Non itilizatè" />
+            <TextBox x:Name="UsernameTextBox" Margin="0,6,0,14" Padding="8" AutomationProperties.Name="Non itilizatè" />
+            <StackPanel x:Name="SetupPanel" Visibility="Collapsed">
+                <TextBlock Text="Kreye modpas administratè" />
+                <PasswordBox x:Name="SetupPasswordBox" Margin="0,6,0,14" Padding="8" AutomationProperties.Name="Modpas administratè" />
+                <TextBlock Foreground="#5C6670" Text="Premye modpas la dwe gen omwen 12 karaktè." TextWrapping="Wrap" />
+            </StackPanel>
+            <StackPanel x:Name="LoginPanel">
+                <TextBlock Text="Modpas" />
+                <PasswordBox x:Name="PasswordBox" Margin="0,6,0,14" Padding="8" AutomationProperties.Name="Modpas" />
+            </StackPanel>
+            <TextBlock x:Name="MessageTextBlock" Foreground="#B42318" TextWrapping="Wrap" />
+        </StackPanel>
+        <Button Grid.Row="3" x:Name="ActionButton" Height="36" Content="Ouvri sesyon" Click="ActionButton_Click" IsDefault="True" AutomationProperties.Name="Ouvri sesyon" />
+    </Grid>
+</Window>

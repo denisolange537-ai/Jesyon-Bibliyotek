@@ -1,0 +1,22 @@
+<UserControl x:Class="GestionBibliotheque.RolesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+        <DockPanel Margin="0,0,0,14">
+            <Button DockPanel.Dock="Right" Padding="14,8" Content="Kreye wòl" Click="CreateRole_Click"/>
+            <TextBox x:Name="NewRoleNameTextBox" Width="260" HorizontalAlignment="Left" Padding="8" ToolTip="Non nouvo wòl la"/>
+        </DockPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="260"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+            <ListBox x:Name="RolesListBox" SelectionChanged="RolesListBox_SelectionChanged" DisplayMemberPath="Name"/>
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" Margin="16,0,0,0">
+                <WrapPanel x:Name="PermissionsPanel"/>
+            </ScrollViewer>
+        </Grid>
+        <DockPanel Grid.Row="2" Margin="0,14,0,0">
+            <TextBlock x:Name="StatusTextBlock" VerticalAlignment="Center" TextWrapping="Wrap"/>
+            <Button DockPanel.Dock="Right" Padding="14,8" Content="Sove pèmisyon" Click="SavePermissions_Click"/>
+        </DockPanel>
+    </Grid>
+</UserControl>
